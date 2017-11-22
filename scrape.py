@@ -173,7 +173,9 @@ def giveScore(path, cpus, gpus):
           "matchedGpuName": gpu,
           "originalGpuName": gpuOriginal,
           "matchTypeGpu": matchTypeGpu,
-          "price": price}
+          "price": price,
+          "battery": info["Max batteri levetid"] if "Max batteri levetid" in info else 0,
+          "weight": float(info["vægt"] if "vægt" in info else (info["Vægt"] if "Vægt" in info else 0).rstrip("kgKG "))}
 
 
 def rateAll():
